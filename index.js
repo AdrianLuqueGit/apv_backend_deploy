@@ -30,6 +30,9 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions));
+app.use("/", (req, res)=>{
+    res.json('Servidor AVP funciona correctamente')
+});
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/pacientes", pacienteRoutes);
 
