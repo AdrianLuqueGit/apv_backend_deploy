@@ -22,7 +22,7 @@ try {
     const veterinarioGuardado = await veterinarioU.save();
     console.log(veterinarioGuardado.token)
     //ENVIO DE MAIL CONFIRMACION
-    emailRegistro({
+   emailRegistro({
         nombre, 
         email,
         token: veterinarioU.token
@@ -33,7 +33,9 @@ try {
     
     
 } catch (error) {
+    console.log('error en guardado')
     console.log(error)
+    process.exit(1)
 }
 
     
